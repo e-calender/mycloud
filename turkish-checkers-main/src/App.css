@@ -1,0 +1,173 @@
+body {
+  margin: 0px;
+  background-color:lightblue;
+}
+
+.App {
+  text-align: center;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-rows: 90px auto 90px;
+  grid-template-areas: 
+    "lspace header rspace"
+    "lspace main rspace"
+    "lspace footer rspace";
+  justify-content: center;
+  gap: 15px;
+  height: 100vh;
+  max-width: 1324px;
+  /* width: 100%; */
+}
+
+.header {
+  grid-area: header;
+  height: 90px;
+  background-color: lightblue;
+  width: 100%;
+}
+
+.lspace {
+  grid-area: lspace;
+}
+
+.rspace {
+  grid-area: rspace;
+}
+
+.content {
+  grid-area: main;
+  width: 100%;
+  height: 100%;
+  /* background-color: beige; */
+}
+
+.aside {
+  grid-area: aside;
+  width: 100%;
+  background-color: beige;
+  box-shadow: 3px 3px 15px gray;
+}
+
+.footer {
+  grid-area: footer;
+  height: 90px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  margin: 2px;
+  gap: 2px;
+  width: 700px;
+  height: 700px;
+  border: 5px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgb(83, 108, 149);
+}
+
+.board .cell {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board .cell .item {
+  width: 60px;
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  /* border: 1px red solid; */
+  box-shadow: 1px 1px 5px rgba(119, 119, 105, 0.808);
+  cursor: pointer;
+}
+
+.cell-moveable {
+  border: 1px greenyellow solid;
+}
+
+.board .cell .selected-item {
+  background-color:thistle;
+  border: 3px solid lightcoral;
+}
+
+.cell-black {
+  background-color:rgba(0, 0, 0, 0.496);
+  color: white;
+}
+
+.cell-white {
+  background-color:antiquewhite;
+}
+
+.board .cell .white {
+  background-color: white;
+}
+
+.board .cell .black {
+  background-color: black;
+}
+
+.board .navigable {
+  background-color:darkseagreen;
+}
+
+.item-white {
+  background-color: bisque;
+}
+
+.item-dama {
+  /* width: 33%; */
+  border: 15px goldenrod solid;
+  border-radius: 50px;
+}
+
+.current-gamer, .reset-game {
+  width: 200px;
+  height: 25px;
+  background-color: antiquewhite;
+  border: 5px black solid;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgb(83, 108, 149);
+  font-size: 19px;
+  font-weight: 900;
+  text-align: center;
+  padding: 9px;
+  margin-right: 15px;
+}
+
+.starting-cell {
+  background-color: aquamarine;
+}
+
+.reached-cell {
+  background-color:chocolate;
+}
+
+.reset-game {
+  cursor: pointer;
+}
+
+.will-item-delete {
+  border: 3px rgb(0, 255, 8) solid;
+}
+
+.will-item-move {
+  border: 3px rgb(255, 0, 217) solid;
+}
