@@ -1,0 +1,166 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMT konutları</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="HKStudio" />
+
+    <link rel="shortcut icon" href="~/userTema/images/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="~/userTema/css/bootstrap.min.css" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="~/userTema/css/materialdesignicons.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/userTema/css/fontawesome.css" />
+
+    <!-- selectize css -->
+    <link rel="stylesheet" type="text/css" href="~/userTema/css/selectize.css" />
+
+    <!--Slider-->
+    <link rel="stylesheet" href="~/userTema/css/owl.carousel.css" />
+    <link rel="stylesheet" href="~/userTema/css/owl.theme.css" />
+    <link rel="stylesheet" href="~/userTema/css/owl.transitions.css" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="~/userTema/css/style.css" />
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+    <!-- Navigation Bar-->
+    <header id="topnav" class="defaultscroll scroll-active">
+        <nav class="navbar navbar-dark bg-dark justify-content-between">
+
+            <a href="/UserPanel/Index" class="navbar-brand"> SMT KONUTLARI </a>
+            <a href="/UserElectricityBill/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Elektrik Fatularım  </a>
+            <a href="/UserWaterBill/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Su Fatularım  </a>
+            <a href="/UserNaturalGasBill/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Doğal Gaz Fatularım  </a>
+            <a href="/UserDues/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Aidatlarım  </a>
+            <a href="/UserPanel/OutgoingMessage" class="navbar-brand btn btn-primary  text-white"> Mesajlarım  </a>
+            <a href="/UserPanel/NewMessage" class="navbar-brand btn btn-primary-outline  text-white"> İletişim  </a>
+            
+
+            <a href="#" class="">   </a>
+
+
+            <a href="#" class="">   </a>
+            <a href="#" class="">   </a>
+            <a href="#" class="">   </a>
+
+
+
+
+
+
+            <form class="form-inline">
+
+                @*<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">*@
+
+
+
+                <a href="/UserProfil/Index" class="btn btn-warning my-2 my-sm-0 m-2 p-2 pl-4 pr-4" type="submit">  <i class="mdi mdi-account d-inline-block rounded-pill"></i> Profil</a>
+
+                <a href="/Home/LogOut" class="btn btn-outline-danger my-2 my-sm-0 m-2 p-2 pl-4 pr-4"> Cıkış Yap </a>
+
+            </form>
+        </nav>
+    </header><!--end header-->
+    <!-- Navbar End -->
+    <!-- subscribe start -->
+    @*<section class="section">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </section>*@
+
+    @RenderBody()
+
+    <!-- subscribe end -->
+    <!-- footer start -->
+
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <hr />
+        <br />
+        <!-- Section: Social media -->
+        <section class="mb-4">
+           
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+          
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+          
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-github"></i>
+            </a>
+        </section>
+        <hr />
+        <!-- Section: Social media -->
+    </div>
+
+    
+
+
+    <!-- Grid container -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 SMTcoder :
+
+        <a class="text-white" href="https://mdbootstrap.com/"> Konutları</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+
+    <!-- Back to top -->
+    <a href="#" class="back-to-top rounded text-center" id="back-to-top">
+        <i class="mdi mdi-chevron-up d-block"> </i>
+    </a>
+    <!-- Back to top -->
+    <!-- javascript -->
+    <script src="~/userTema/js/jquery.min.js"></script>
+    <script src="~/userTema/js/bootstrap.bundle.min.js"></script>
+    <script src="~/userTema/js/jquery.easing.min.js"></script>
+    <script src="~/userTema/js/plugins.js"></script>
+
+    <!-- selectize js -->
+    <script src="~/userTema/js/selectize.min.js"></script>
+    <script src="~/userTema/js/jquery.nice-select.min.js"></script>
+
+    <script src="~/userTema/js/owl.carousel.min.js"></script>
+    <script src="~/userTema/js/counter.int.js"></script>
+
+    <script src="~/userTema/js/app.js"></script>
+    <script src="~/userTema/js/home.js"></script>
+
+</body>
+</html>

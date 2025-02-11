@@ -1,0 +1,84 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<User>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/User/Index">Kullanıcılar</a>      </li>
+</ol>
+
+<div class="text-left">
+    <a href="/User/UserAdd" class="btn btn-primary p-3 m-4"> Yeni Kullanıcı Ekle </a>
+</div>
+
+<table id="UsersTBL" class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th scope="col">Soy isim</th>
+            <th scope="col">Email</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Daire</th>
+            <th scope="col"></th>
+            <th scope="col">Faturalar</th>
+            <th scope="col"></th>
+            <th scope="col"> Güncelle</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th > <img height="100" width="100" src="@item.ImageURL" alt="..." /> </th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>
+
+                    @if (item.ApartmentOwner)
+                    {
+                        <h6> Ev Sahibi </h6>
+                    }
+                    else
+                    {
+                        <h6>Kiracı</h6>
+                    }
+
+                </td>
+                <td> <a href="/User/UserDetay/@item.UserId" class="btn btn-primary"> Daire </a> </td>
+                <td> <a href="/User/UserElectricityBill/@item.UserId" class="btn btn-dark"> Elektrik  </a> </td>
+                <td> <a href="/User/UserWaterBill/@item.UserId" class="btn btn-dark"> Su </a> </td>
+                <td> <a href="/User/UserNaturalGasBill/@item.UserId" class="btn btn-dark"> Doğal Gas </a> </td>
+                <td> <a href="/User/UserUpdate/@item.UserId" class="btn btn-warning"> Güncelle </a> </td>
+
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#UsersTBL').dataTable({});
+</script>

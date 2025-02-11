@@ -1,0 +1,98 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.User
+
+@{
+    ViewBag.Title = "UserAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/User/Index">Kullanıcılar</a> / Yeni Kullanıcı Ekle      </li>
+</ol>
+
+<br />
+
+@using (Html.BeginForm("UserAdd", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <div class="text-left">
+                        <a href="/User/Index" class="btn btn-primary p-3 m-4">  Kullanıcı Listesine Dön </a>
+                    </div>
+                </th>
+                <th></th>
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("İsim")
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Soy isim")
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                </th>
+
+
+
+
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Email")
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Sifre")
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("TcNo")
+                    @Html.TextBoxFor(x => x.TCNo, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Telefon")
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">
+                    <input type="file" name="ImageURL" />
+                </th>
+                <th scope="col">
+                    @Html.Label("Arac Plakası")
+                    @Html.TextBoxFor(x => x.CarsPlate, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+
+                </th>
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Daireler")
+                    @Html.DropDownListFor(x => x.ApartmentId, (List<SelectListItem>)ViewBag.VDaireler, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Ev Sahibi")
+                    @Html.CheckBoxFor(x => x.ApartmentOwner, new { @class = "form-control" })
+                </th>
+
+            </tr>
+            <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th> </tr>
+
+
+        </thead>
+    </table>
+
+
+
+}
+

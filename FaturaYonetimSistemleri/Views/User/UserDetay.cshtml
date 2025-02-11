@@ -1,0 +1,85 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<Apartment>
+
+
+@{
+    ViewBag.Title = "UserDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/User/Index">Kullanıcılar</a> / @ViewBag.VuserName </li>
+</ol>
+
+
+
+<section >
+    <div class="h-100">
+       
+            <div class="col col-md-9 col-lg-12 col-xl-12">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+
+                        @*<div class="flex-shrink-0">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                 alt="Generic placeholder image" class="img-fluid"
+                                 style="width: 180px; border-radius: 10px;">
+
+                        </div>*@
+                        <h3 class="mb-0 text-center "> @ViewBag.VuserName - Daire Detayları</h3>
+                        <div class="d-flex text-black">
+
+
+
+                            <div class="flex-grow-1 ms-3">
+
+
+
+
+                                <BR />
+                                @foreach (var item in Model)
+                                {
+
+                                    <div class="d-flex justify-content-start rounded-3 p-4 mb-4"
+                                         style="background-color: #efefef;">
+                                        <div>
+
+                                        </div>
+                                        <div class="px-3">
+
+                                            <h4 class="m-2 text-center"> @item.ApartmentBlock BLOK </h4>
+                                        </div>
+                                        <div>
+
+                                            <h4 class="m-2 text-center"> @item.Floor. KAT </h4>
+                                        </div>
+
+
+                                        <div class="px-3">
+
+                                            <h4 class="m-2 text-center">Daire No : @item.ApartmentNo  </h4>
+                                        </div>
+                                        <div>
+
+                                            <h4 class="m-2 text-center"> Ev Tipi : @item.HomeType  </h4>
+                                        </div>
+                                    </div>
+
+                                }
+                                <div class="d-flex pt-1">
+                                    <a href="/User/Index" class="btn btn-outline-primary me-1 flex-grow-1">  Kullanıcı Listesine Dön </a>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+</section>
+
+
